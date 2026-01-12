@@ -10,7 +10,7 @@ with CTE as (
         {{get_season('started_at')}} as season,
         year(to_timestamp(started_at)) as year
 
-    from {{ source('demo', 'bike') }}
+    from {{ ref('stg_bike') }}
 
 )
 
